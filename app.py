@@ -5,7 +5,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
 app.secret_key = 'supersecretkey'
 users = {
-    'admin': generate_password_hash(' ') #add password here
+    'admin': generate_password_hash('Abhedya') #add password here
 }
 
 @app.route('/')
@@ -43,7 +43,7 @@ def login():
         if "admin" in username.lower():
             if check_password_hash(users.get('admin', ''), password):
                 return "Congrats! Here's your flag: CTF{L0g1n_Byp4ss_Succ3ss}"
-            return "Hint: "
+            return "Hint: Which club is conducting this event?"
         if username in users:
             if check_password_hash(users[username], password):
                 return f"Welcome {username}!"
