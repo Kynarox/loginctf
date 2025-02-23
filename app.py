@@ -42,7 +42,7 @@ def login():
         password = request.form['password']
         if "admin" in username.lower():
             if check_password_hash(users.get('admin', ''), password):
-                return "Congrats! Here's your flag: CTF_FLAG{login_bypass_success}"
+                return "Congrats! Here's your flag: CTF{L0g1n_Byp4ss_Succ3ss}"
             return "Hint: "
         if username in users:
             if check_password_hash(users[username], password):
